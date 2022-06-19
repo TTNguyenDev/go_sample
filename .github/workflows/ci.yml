@@ -29,6 +29,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Golang Migrate CLI
+      run: curl -L https://github.com/golang-migrate/migrate/releases/download/$version/migrate.$platform-amd64.tar.gz | tar xvz
+
     - name: Run migrations
       run: make migrateup
 
